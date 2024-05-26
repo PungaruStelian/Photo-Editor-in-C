@@ -1,0 +1,59 @@
+313CAb Pungaru Stelian Andrei
+
+free_matrix is ​​the function for freeing a double pointer from memory
+
+matrix_gray dynamically allocates a two-dimensional matrix with one channel,
+value from 0 to 255
+
+matrix_rgb dynamically allocates a two-dimensional matrix with 3 channels
+(for each pigment) from the same range
+
+verif_command and verif_parameter check if the input is known
+conver_to_number converts an ascii number into a decimal one
+
+min and max calculate the minimum and maximum respectively of 2 numbers
+
+image is a structure in which I store the elements of the matrix, the type,
+the value maximum, length and width of the matrix.
+photo1 is an image that changes to crop, equalize and rotate
+photo2 is the image that changes all commands except yes crop
+
+free_image deletes an image from memory; only dynamic allocations
+
+read_ascii is the function for reading images of type P1, P2, P3, but the type
+is read separately to choose the type of elements of the matrix
+read_binary reads in a different way only the matrix by fread with an unsigned
+char that we assign directly as an element of the matrix
+
+remove_comments_a reads the information from a text file and as long as a line
+does not start with # I write it in another file that I use later
+remove_comments_b reads each line from a file and writes them into one
+intermediate file for the rest of the program
+
+select_image modifies photo(photo2) by selecting coordinates from
+pold (photo1)
+
+check_if_power_2 checks if a number is a power of 2
+
+the_histogram makes a frequency vector of all values ​​found in
+matrix in x, y is the number of stars for each bin
+
+if_string_is number checks if a character string contains only numbers
+
+clamp keeps the values ​​in the range [0.255]
+
+the_equalize creates the histogram again and through the given formula we find
+the values pixel
+
+APPLY checks if the current selection includes the edges of photo1 to keep
+pixels intact, otherwise, depending on the type, it applies to the current
+position the kernel of the respective filter
+
+rotate rotates the image in the direction given by angle/90 times by
+transposition and reversal of lines or columns
+
+Main :
+I write the content from the input in aux by removing the comments and output
+is the image file saved from SAVE
+in LOAD I read a character to check if the received file is empty
+at EXIT I release the images
